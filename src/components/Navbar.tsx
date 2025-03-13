@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { Logo } from '../assets/Icons/Icons';
-import { Moon } from '../assets/Icons/Icons';
+import { Logo, Moon } from '../assets/Icons/Icons';
+import { ThemeContext } from './Layout';
 
 const Navbar: React.FC = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
     <NavContainer>
       <div className="nav-brand">
-        
         <NavLink to="/" className="logo" aria-label="Go to Home">
           <Logo />
         </NavLink>
@@ -21,7 +22,7 @@ const Navbar: React.FC = () => {
         <NavLink to="/contact" className="nav-item" activeClassName="active">Contact</NavLink>
       </nav>
 
-      <button className="theme-toggle" aria-label="Toggle Dark Mode">
+      <button className="theme-toggle" aria-label="Toggle Dark Mode" onClick={toggleTheme}>
         <Moon />
       </button>
     </NavContainer>
@@ -65,7 +66,7 @@ const NavContainer = styled.header`
     border: none;
     cursor: pointer;
     font-size: 1.5rem;
-    color: var(--text-color);
+    color: ${(props) => (props.theme.mode === 'dark' ? '#e1e1e1' : '#213547')};
   }
 `;
 

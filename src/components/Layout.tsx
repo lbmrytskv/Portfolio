@@ -1,18 +1,45 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, createContext, useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import styled from 'styled-components';
+import styled, { ThemeProvider, css } from 'styled-components';
+
+// Контекст для теми
+export const ThemeContext = createContext({
+  theme: 'light',
+  toggleTheme: () => {},
+});
 
 const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => {
+      const newTheme = prevTheme === 'light' ? 'dark' : 'light';
+      localStorage.setItem('theme', newTheme);
+      return newTheme;
+    });
+  };
+
   return (
-    <PageContainer>
-      <Navbar />
-      <MainContent>
-        <BackgroundEffects />
-        <ContentWrapper>{children}</ContentWrapper>
-      </MainContent>
-      <Footer />
-    </PageContainer>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <ThemeProvider theme={{ mode: theme }}>
+        <PageContainer>
+          <Navbar />
+          <MainContent>
+            <BackgroundEffects theme={theme} />
+            <ContentWrapper>{children}</ContentWrapper>
+          </MainContent>
+          <Footer />
+        </PageContainer>
+      </ThemeProvider>
+    </ThemeContext.Provider>
   );
 };
 
@@ -40,9 +67,10 @@ const ContentWrapper = styled.div`
   width: 100%;
   padding: 0 2rem;
   text-align: center;
+  color: var(--text-color);
 `;
 
-const BackgroundEffects = styled.div`
+const BackgroundEffects = styled.div<{ theme: string }>`
   position: absolute;
   inset: 0;
   z-index: -1;
@@ -52,9 +80,14 @@ const BackgroundEffects = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #f7f7f7;
-    background-image: linear-gradient(currentColor 1px, transparent 1px),
-      linear-gradient(to right, currentColor 1px, transparent 1px);
+    background: ${({ theme }) =>
+      theme === 'dark' ? '#020a13' : '#f7f7f7'}; /* Твій фон залишається в світлій темі */
+    background-image: ${({ theme }) =>
+      theme === 'dark'
+        ? `linear-gradient(currentColor 1px, transparent 1px),
+           linear-gradient(to right, currentColor 1px, transparent 1px)`
+        : `linear-gradient(currentColor 1px, transparent 1px),
+           linear-gradient(to right, currentColor 1px, transparent 1px)`}; /* Градієнти зберігаємо */
     background-size: 100px 100px;
     color: rgba(150, 150, 150, 0.3);
     z-index: -2;
@@ -65,13 +98,19 @@ const BackgroundEffects = styled.div`
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(at 40% 40%, #ffcccb 0, transparent 50%),
-      radial-gradient(at 90% 10%, #add8e6 0, transparent 50%),
-      radial-gradient(at 50% 95%, #ffeb3b 0, transparent 50%),
-      radial-gradient(at 20% 30%, #c1e1c1 0, transparent 50%);
+    background-image: ${({ theme }) =>
+      theme === 'dark'
+        ? `radial-gradient(at 40% 40%, #1e90ff 0, transparent 50%),
+           radial-gradient(at 90% 10%, #ff69b4 0, transparent 50%),
+           radial-gradient(at 50% 95%, #00ffff 0, transparent 50%)`
+        : `radial-gradient(at 40% 40%, #ffcccb 0, transparent 50%),
+           radial-gradient(at 90% 10%, #add8e6 0, transparent 50%),
+           radial-gradient(at 50% 95%, #ffeb3b 0, transparent 50%),
+           radial-gradient(at 20% 30%, #c1e1c1 0, transparent 50%)`}; /* Колірні тіні */
     filter: blur(120px) saturate(80%);
-    opacity: 0.12;
+    opacity: ${({ theme }) => (theme === 'dark' ? '0.12' : '0.12')}; /* Прозорість не змінюємо */
     transform: translateZ(0);
     z-index: -1;
   }
 `;
+

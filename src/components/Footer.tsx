@@ -26,7 +26,6 @@ const Footer: React.FC<IFooterProps> = ({ children, goto }) => {
       )}
 
       <SocialMedia>
-      
         <a href="https://www.facebook.com/profile.php?id=100015444075186" target="_blank" rel="noopener noreferrer">
           <Facebook />
         </a>
@@ -36,7 +35,6 @@ const Footer: React.FC<IFooterProps> = ({ children, goto }) => {
         <a href="https://github.com/lbmrytskv" target="_blank" rel="noopener noreferrer">
           <Github />
         </a>
-        
         <a href="https://www.instagram.com/koordyna.ty/" target="_blank" rel="noopener noreferrer">
           <Instagram />
         </a>
@@ -48,26 +46,9 @@ const Footer: React.FC<IFooterProps> = ({ children, goto }) => {
 /* ---------------------------- Styles ---------------------------- */
 const FooterContainer = styled.footer`
   text-align: center;
-  padding: 2rem 0;
-  
-
-  .footer-link {
-    text-decoration: none;
-    font-size: var(--font-sm);
-    color: var(--text-color);
-    transition: all 0.3s ease;
-
-    svg {
-      margin-left: 1rem;
-      transition: margin-left 0.3s ease-in-out;
-    }
-
-    &:hover {
-      svg {
-        margin-left: 1.5rem;
-      }
-    }
-  }
+  padding: 1.2rem 0; /* ✅ Зменшена висота футера */
+  background: var(--bg);
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* ✅ Додано тінь зверху */
 `;
 
 const SocialMedia = styled.div`

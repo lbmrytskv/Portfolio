@@ -4,24 +4,26 @@
   font-weight: 400;
 
   --primary-color: #646cff;
-  --text-color: #213547;
+  --text-color: #213547; /* Світла тема (темний текст) */
   --bg-color: #f9f9f9; /* Світлий фон */
   --grid-color: rgba(150, 150, 150, 0.3); /* Колір сітки */
   --overlay-opacity: 0.12; /* Прозорість кольорових тіней */
+}
 
-  color: var(--text-color);
-  background-color: var(--bg-color);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Додаємо темну тему */
+[data-theme='dark'] {
+  --text-color: #ffffff; /* Білий текст у темній темі */
+  --bg-color: #020a13; /* Темний фон */
+  --grid-color: rgba(255, 255, 255, 0.1); /* Менш помітна сітка */
+  --overlay-opacity: 0.08; /* Трохи менша прозорість */
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  color: var(--text-color); /* Використовуємо змінну для кольору тексту */
+  background-color: var(--bg-color);
 }
 
 a {

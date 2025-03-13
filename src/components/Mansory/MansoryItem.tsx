@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-// Типи пропсів
+
 interface MansoryItemProps {
   item: {
     title: string;
@@ -96,8 +96,8 @@ const MansoryItemStyle = styled.div`
 
     h3 {
       font-size: 1.5rem;
-      margin: 0; /* ✅ Прибрано зайві відступи */
-      line-height: 1.2; /* ✅ Оптимізований інтервал */
+      margin: 0; 
+      line-height: 1.2; 
       color: #fff;
       text-align: center;
     }
@@ -107,12 +107,12 @@ const MansoryItemStyle = styled.div`
       color: #e0e0e0;
       padding-left: 15px;
       padding-right: 10px;
-      margin-top: 5px; /* ✅ Додаємо невеликий відступ, але без зайвого простору */
-      margin-bottom: 5px; /* ✅ Мінімальний відступ між текстом і тегами */
+      margin-top: 5px; 
+      margin-bottom: 5px; 
     }
 
     .tags {
-      margin-top: 5px; /* ✅ Зменшена відстань між текстом і тегами */
+      margin-top: 5px; 
       display: flex;
       gap: 0.5rem;
       justify-content: flex-start;

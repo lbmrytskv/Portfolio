@@ -1,9 +1,9 @@
 import React, { PropsWithChildren, createContext, useState, useEffect } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import styled, { ThemeProvider, css } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 
-// Контекст для теми
+
 export const ThemeContext = createContext({
   theme: 'light',
   toggleTheme: () => {},
@@ -18,6 +18,10 @@ const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
       setTheme(savedTheme);
     }
   }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   const toggleTheme = () => {
     setTheme((prevTheme) => {
@@ -54,7 +58,7 @@ const PageContainer = styled.div`
 
 const MainContent = styled.main`
   flex: 1;
-  width: 100vw; 
+  width: 100vw;
   position: relative;
   display: flex;
   align-items: center;
@@ -80,16 +84,11 @@ const BackgroundEffects = styled.div<{ theme: string }>`
     position: absolute;
     width: 100%;
     height: 100%;
-    background: ${({ theme }) =>
-      theme === 'dark' ? '#020a13' : '#f7f7f7'}; /* Твій фон залишається в світлій темі */
-    background-image: ${({ theme }) =>
-      theme === 'dark'
-        ? `linear-gradient(currentColor 1px, transparent 1px),
-           linear-gradient(to right, currentColor 1px, transparent 1px)`
-        : `linear-gradient(currentColor 1px, transparent 1px),
-           linear-gradient(to right, currentColor 1px, transparent 1px)`}; /* Градієнти зберігаємо */
+    background: ${({ theme }) => (theme === 'dark' ? '#020a13' : '#f7f7f7')};
+    background-image: linear-gradient(currentColor 1px, transparent 1px),
+      linear-gradient(to right, currentColor 1px, transparent 1px);
     background-size: 100px 100px;
-    color: rgba(150, 150, 150, 0.3);
+    color: var(--grid-color);
     z-index: -2;
   }
 
@@ -106,11 +105,10 @@ const BackgroundEffects = styled.div<{ theme: string }>`
         : `radial-gradient(at 40% 40%, #ffcccb 0, transparent 50%),
            radial-gradient(at 90% 10%, #add8e6 0, transparent 50%),
            radial-gradient(at 50% 95%, #ffeb3b 0, transparent 50%),
-           radial-gradient(at 20% 30%, #c1e1c1 0, transparent 50%)`}; /* Колірні тіні */
+           radial-gradient(at 20% 30%, #c1e1c1 0, transparent 50%)`};
     filter: blur(120px) saturate(80%);
-    opacity: ${({ theme }) => (theme === 'dark' ? '0.12' : '0.12')}; /* Прозорість не змінюємо */
+    opacity: var(--overlay-opacity);
     transform: translateZ(0);
     z-index: -1;
   }
 `;
-

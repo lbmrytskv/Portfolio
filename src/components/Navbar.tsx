@@ -33,7 +33,7 @@ const NavContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   background: var(--bg);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 

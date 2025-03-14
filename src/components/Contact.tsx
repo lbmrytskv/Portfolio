@@ -1,11 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }, // Зменшив тривалість до 0.5 сек
+};
 
 const Contact: React.FC = () => {
   return (
-    <ContactSection>
+    <ContactSection 
+      as={motion.div} 
+      initial="initial" 
+      animate="animate" 
+      variants={fadeInUp}
+    >
       <div className="content-wrapper">
-        <h1 className="intro__text">Contact.</h1>
+        <h1 className="intro__text">Contact</h1>
         <p>Get in touch or shoot me an email directly at <b>yourmail@example.com</b></p>
         <form>
           <input type="text" placeholder="Name" required />
@@ -32,6 +43,10 @@ const ContactSection = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 60%;
+    margin: 0 auto;
+    
+   
 
     input, textarea {
       padding: 0.75rem;
@@ -40,12 +55,14 @@ const ContactSection = styled.div`
     }
 
     button {
-      background-color: var(--primary);
-      color: #fff;
-      border: none;
-      padding: 0.75rem;
-      border-radius: 5px;
-      cursor: pointer;
+    font-size: calc(var(--font-sm) + 1.1px);
+    background: var(--cw);
+    border: none;
+    color: var(--bg);
+    border-radius: 5px;
+    padding: 15px 40px;
+    margin-bottom: 3rem;
+  
 
       &:hover {
         background-color: var(--primary-dark);

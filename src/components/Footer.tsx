@@ -46,7 +46,7 @@ const Footer: React.FC<IFooterProps> = ({ children, goto }) => {
 /* ---------------------------- Styles ---------------------------- */
 const FooterContainer = styled.footer`
   text-align: center;
-  padding: 1.2rem 0; /* ✅ Зменшена висота футера */
+  padding: 0.5rem 0; /* ✅ Зменшена висота футера */
   background: var(--bg);
   box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* ✅ Додано тінь зверху */
 `;

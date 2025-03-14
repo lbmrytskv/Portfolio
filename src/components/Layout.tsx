@@ -97,16 +97,16 @@ const BackgroundEffects = styled.div<{ theme: string }>`
     position: absolute;
     width: 100%;
     height: 100%;
-  background-image: ${({ theme }) =>
+    background-image: ${({ theme }) =>
       theme === 'dark'
         ? `radial-gradient(at 40% 40%, #1e90ff 0, transparent 50%),
-           radial-gradient(at 90% 10%, #ff69b4 0, transparent 50%),
-           radial-gradient(at 50% 95%, #00ffff 0, transparent 50%)`
-        : `radial-gradient(at 30% 20%, #2ab1c9 0, #fad0c4 50%, transparent 70%),
-           radial-gradient(at 70% 80%, #c2c060 0, #94b327 50%, transparent 70%),
-           radial-gradient(at 0% 90%, #84fab0 0, #1b0d9e 50%, transparent 70%)`};
-
-    filter: blur(100px) saturate(90%);
+           radial-gradient(at 90% 10%, #ff69b4 0, transparent 60%),
+           radial-gradient(at 50% 95%, #00ffff 0, transparent 70%)`
+        : `radial-gradient(at 40% 40%, #ffcccb 0, transparent 50%),
+           radial-gradient(at 90% 10%, #5db5d3 0, transparent 60%),
+           radial-gradient(at 50% 95%, #ffeb3b 0, transparent 70%),
+           radial-gradient(at 20% 30%, #c1e1c1 0, transparent 50%)`};
+   filter: blur(60px) saturate(87%);
     opacity: var(--overlay-opacity);
     transform: translateZ(0);
     z-index: -1;

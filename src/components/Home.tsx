@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
 const Home: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const Home: React.FC = () => {
       </motion.h1>
       <motion.p>
         I am a Frontend Developer passionate about building user-friendly and modern web applications.
-        Explore my <strong>Projects</strong> or <strong>Contact Me</strong> for collaborations.
+        Explore my <StyledNavLink to="/projects">Projects</StyledNavLink> or <StyledNavLink to="/contact">Contact Me</StyledNavLink> for collaborations.
       </motion.p>
     </ContentWrapper>
   );
@@ -31,6 +32,18 @@ const ContentWrapper = styled.div`
     max-width: 800px;
     margin: 0 auto;
   }
-`;
+`
+const StyledNavLink = styled(NavLink)`
+  color: inherit; /* Наслідує колір тексту */
+  font-weight: bold;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease-in-out;
+
+  &:hover {
+    color: inherit;
+    text-decoration: underline;
+  }
+`
+;
 
 export default Home;

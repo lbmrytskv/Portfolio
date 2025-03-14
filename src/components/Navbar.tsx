@@ -68,6 +68,11 @@ const NavContainer = styled.header`
     font-size: 1.5rem;
     color: ${(props) => (props.theme.mode === 'dark' ? '#e1e1e1' : '#213547')};
   }
+  svg {
+  fill: var(--icon-color);
+  transition: fill 0.3s ease;
+}
+
 `;
 
 export default Navbar;

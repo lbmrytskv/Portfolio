@@ -66,6 +66,11 @@ const SocialMedia = styled.div`
       color: var(--primary);
     }
   }
+
+  svg {
+    fill: var(--icon-color);
+    transition: fill 0.3s ease;
+  }
 `;
 
 export default Footer;

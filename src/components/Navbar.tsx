@@ -43,6 +43,8 @@ const NavContainer = styled.header`
     font-size: 1.5rem;
   }
 
+
+
   .nav-links {
     display: flex;
     gap: 1.5rem;

@@ -106,8 +106,8 @@ const BackgroundEffects = styled.div<{ theme: string }>`
            radial-gradient(at 90% 10%, #5db5d3 0, transparent 60%),
            radial-gradient(at 50% 95%, #ffeb3b 0, transparent 70%),
            radial-gradient(at 20% 30%, #c1e1c1 0, transparent 50%)`};
-   filter: blur(30px) saturate(95%);
-    opacity:0.15;
+   filter: blur(50px);
+    opacity:0.3;
     transform: translateZ(0);
     z-index: -1;
   }

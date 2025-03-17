@@ -25,5 +25,14 @@ export const projectsData = [
       link: "https://courses-cards.onrender.com/",
       technologies: ["React", "TypeScript", "CSS", "Redux Toolkit"],
       type: ["tools"],
+    },
+ {
+      id: 4,
+      title: "Piano Player",
+      description: "Become a musician and play happy birthday song on a virtual piano!",
+      imageUrl: "/public/images/pianoplayer.gif",
+      link: "https://pianoplayerlbmr.netlify.app/",
+      technologies: [ "Javascript", "CSS", "HTML"],
+      type: ["tools"],
     }
   ];

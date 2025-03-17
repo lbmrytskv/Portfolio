@@ -6,7 +6,7 @@ import { projectsData } from './projectsData';
 const Projects: React.FC = () => {
   return (
     <div>
-      <h1 className="intro__text">Projects.</h1>
+      <h1 className="intro__text">Projects</h1>
       <MansoryLayout>
         {projectsData.map((project, index) => (
           <MansoryItem key={index} item={project} />

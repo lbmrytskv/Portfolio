@@ -6,12 +6,12 @@ const MansoryLayout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
 };
 
 const Layout = styled.div`
-  margin: 2rem auto; /* Центрує весь контейнер */
+  margin: 2rem auto; 
   display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr)); /* Два стовпці */
-  gap: 0.8em; /* Зменшена відстань між стовпцями */
-  justify-content: center; /* Центрує грід */
-  max-width: 900px; /* Зменшив ширину, щоб зробити більш компактним */
+  grid-template-columns: repeat(2, minmax(300px, 1fr)); 
+  gap: 0.8em; 
+  justify-content: center;
+  max-width: 900px; 
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, minmax(280px, 1fr));

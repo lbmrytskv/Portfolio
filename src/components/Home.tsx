@@ -26,8 +26,9 @@ const Home: React.FC = () => {
         </motion.p>
       </TextContainer>
       <ImageContainer>
+        
         <motion.img
-          src="/images/Home.svg"
+          src="/images/Home2-cropped.svg"
           alt="Portfolio Illustration"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } }}
@@ -47,7 +48,7 @@ const FlexContainer = styled.div`
   align-items: center;
   justify-content: center; 
   width: 100vw;
-  max-width: 1470px; 
+  max-width: 1500px; 
   margin: 0 auto; 
   overflow: hidden;
   
@@ -71,37 +72,34 @@ const TextContainer = styled.div`
     margin-bottom: 2rem;
     max-width: 500px;
   }
-
-  @media (max-width: 900px) {
-    max-width: 100%;
-    text-align: center;
-    margin-left: 0;
-  }
 `;
 
 const ImageContainer = styled.div`
   flex: 1;
-  max-width: 52%; 
+  max-width: 50%; 
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 3rem; 
-  margin-bottom: 190px;
+  margin-right: 2rem; 
+  margin-bottom: 50px;
+  
+ 
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    
   }
 
-  @media (max-width: 900px) {
-    max-width: 100%;
-    height: auto;
-    margin-right: 0;
-  }
+ 
+
 `;
+
+
+
 
 const StyledNavLink = styled(NavLink)`
   color: inherit;

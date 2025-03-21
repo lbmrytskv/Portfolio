@@ -100,7 +100,7 @@ const BackgroundEffects = styled.div<{ theme: string }>`
     background-image: ${({ theme }) =>
       theme === 'dark'
         ? `radial-gradient(at 40% 40%, #1e90ff 0, transparent 50%),
-           radial-gradient(at 90% 10%, #f36caf 0, transparent 60%),
+           radial-gradient(at 90% 10%, #7e777b 0, transparent 60%),
            radial-gradient(at 50% 95%, #00ffff 0, transparent 70%)`
         : `radial-gradient(at 40% 40%, #f89e9d 0, transparent 50%),
            radial-gradient(at 90% 10%, #5db5d3 0, transparent 60%),

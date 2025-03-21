@@ -27,7 +27,7 @@ const Home: React.FC = () => {
       </TextContainer>
       <ImageContainer>
         <motion.img
-          src="/images/mainpicture.svg"
+          src="/images/Home.svg"
           alt="Portfolio Illustration"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } }}
@@ -47,7 +47,7 @@ const FlexContainer = styled.div`
   align-items: center;
   justify-content: center; 
   width: 100vw;
-  max-width: 1400px; 
+  max-width: 1470px; 
   margin: 0 auto; 
   overflow: hidden;
   
@@ -81,7 +81,7 @@ const TextContainer = styled.div`
 
 const ImageContainer = styled.div`
   flex: 1;
-  max-width: 45%; 
+  max-width: 52%; 
   height: 100%;
   display: flex;
   align-items: center;

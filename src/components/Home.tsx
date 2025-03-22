@@ -28,7 +28,7 @@ const Home: React.FC = () => {
       <ImageContainer>
         
         <motion.img
-          src="/images/Home2-cropped.svg"
+          src="/images/Home2-cropped-cropped.svg"
           alt="Portfolio Illustration"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } }}
@@ -46,55 +46,86 @@ const FlexContainer = styled.div`
   bottom: 0;
   display: flex;
   align-items: center;
-  justify-content: center; 
-  width: 100vw;
-  max-width: 1500px; 
-  margin: 0 auto; 
-  overflow: hidden;
+  justify-content: space-between; 
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  
+  
   
 `;
 
 const TextContainer = styled.div`
-  flex: 1;
-  max-width: 42%; 
+  flex: 1; 
   text-align: left;
-  margin-left: 2.8rem;
+  justify-content: center;
+  margin-left: 5rem;
+  
  
 
   .intro__text {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 1024px) {
+    font-size: 2.2rem;
   }
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
+}
+
 
   p {
     font-size: 1.4rem;
     margin-bottom: 2rem;
     max-width: 500px;
+
+    @media (max-width: 1024px) {
+      font-size: 1.2rem;
+    }
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width:1024px) {
+    margin-left: 3rem;
+    font-size: 2.2rem;
+    
+  }
+
+  @media (max-width:768px) {
+    margin-left: 2rem;
+    font-size: 1.8rem;
   }
 `;
 
 const ImageContainer = styled.div`
   flex: 1;
-  max-width: 50%; 
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 2rem; 
   margin-bottom: 50px;
+  object-fit: contain;
   
  
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    
-  }
+  object-fit: contain;
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 90vh;
 
- 
+  transition: all 0.3s ease;
+}
+
+
 
 `;
 

@@ -102,13 +102,16 @@ const BackgroundEffects = styled.div<{ theme: string }>`
         ? `radial-gradient(at 40% 40%, #1e90ff 0, transparent 50%),
            radial-gradient(at 90% 10%, #7e777b 0, transparent 60%),
            radial-gradient(at 50% 95%, #00ffff 0, transparent 70%)`
-        : `radial-gradient(at 40% 40%, #f89e9d 0, transparent 50%),
-           radial-gradient(at 90% 10%, #5db5d3 0, transparent 60%),
-           radial-gradient(at 50% 95%, #ffeb3b 0, transparent 70%),
-           radial-gradient(at 20% 30%, #c1e1c1 0, transparent 50%)`};
+        : `radial-gradient(at 0% 10%, #f89e9d 0, transparent 25%),
+           radial-gradient(at 90% 10%, #5db5d3 0, transparent 30%),
+           radial-gradient(at 40% 100%, #ffeb3b 0, transparent 25%),
+           radial-gradient(at 20% 30%, #c1e1c1 0, transparent 30%)`};
    filter: blur(50px);
     opacity:0.3;
     transform: translateZ(0);
     z-index: -1;
   }
+
+
+  
 `;

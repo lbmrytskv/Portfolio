@@ -47,19 +47,35 @@ const NavContainer = styled.header`
 
   .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 3rem;
+    @media (max-width: 1024px) {
+      gap:2rem;
+    }
+
+    @media (max-width: 768px) {
+      gap:1.5rem;
+    }
+
   }
 
   .nav-item {
     text-decoration: none;
     color: var(--text-color);
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 500;
     transition: color 0.3s ease;
 
     &:hover,
     &.active {
       color: var(--primary);
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
     }
   }
 

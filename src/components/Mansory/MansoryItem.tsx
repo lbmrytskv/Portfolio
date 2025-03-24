@@ -15,7 +15,7 @@ interface MansoryItemProps {
 const MansoryItem: React.FC<MansoryItemProps> = ({ item }) => {
   // Функція для випадкової висоти
   const randomHeight = () => {
-    const heights = ['420px', '410px', '405px'];
+    const heights = ['350px', '355px', '360px'];
     return heights[Math.floor(Math.random() * heights.length)];
   };
 
@@ -63,7 +63,7 @@ const MansoryItemStyle = styled.div`
     : '0 4px 12px 4px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.08), 0 -4px 8px rgba(255, 255, 255, 0.05)'}; 
 
   transition: transform 0.3s ease;
-  max-width: 400px;
+  max-width: 350px;
 
   img {
     width: 100%;

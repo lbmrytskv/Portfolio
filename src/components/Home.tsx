@@ -52,26 +52,7 @@ const FlexContainer = styled.div`
   gap: 4rem;
 
   
-  &::before {
-    content: 'Liubomyr Yatskiv';
-    position: absolute;
-    top: 0;
-    left: -29.6%;
-    width: 100%;
-    height: 100%;
-    font-size: 2.8rem;
-    letter-spacing: 1rem;
-    white-space: nowrap;
-    color: ${({ theme }) =>
-  theme.mode === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'};
-
-    font-family: 'Notable', sans-serif;
-    pointer-events: none;
-    user-select: none;
-    transform: rotate(-90deg);
-    z-index: 0;
-  }
-
+  
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 1rem;

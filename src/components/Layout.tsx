@@ -38,6 +38,7 @@ const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
           <Navbar />
           <MainContent>
             <BackgroundEffects theme={theme} />
+           <Watermark>Liubomyr Yatskiv</Watermark> 
             <ContentWrapper>{children}</ContentWrapper>
           </MainContent>
           <Footer />
@@ -73,6 +74,35 @@ const ContentWrapper = styled.div`
   text-align: center;
   color: var(--text-color);
 `;
+
+const Watermark = styled.div`
+  position: absolute;
+  top: 0;
+  left: -49%;
+  width: 100%;
+  height: 100%;
+  font-size: 2.8rem;
+  letter-spacing: 1rem;
+  white-space: nowrap;
+  color: ${({ theme }) =>
+    theme.mode === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'};
+  font-family: 'Notable', sans-serif;
+  pointer-events: none;
+  user-select: none;
+  transform: rotate(-90deg);
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    font-size: 2.4rem;
+    letter-spacing: 0.5rem;
+    
+  }
+`;
+
+
 
 const BackgroundEffects = styled.div<{ theme: string }>`
   position: absolute;

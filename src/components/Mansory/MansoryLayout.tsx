@@ -8,8 +8,7 @@ const MansoryLayout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
 const Layout = styled.div`
   margin: 1rem auto; 
   display: grid;
-  grid-template-columns: repeat(2, minmax(300px, 1fr)); 
-  gap: 1em; 
+  grid-template-columns: repeat(2, minmax(300px, 1fr));  
   justify-content: center;
   justify-items: center;
   max-width: 900px; 
@@ -17,6 +16,7 @@ const Layout = styled.div`
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, minmax(280px, 1fr));
     max-width: 700px;
+    gap: 1em;
   }
 
   @media (max-width: 768px) {

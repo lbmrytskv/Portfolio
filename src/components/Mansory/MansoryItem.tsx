@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-
 interface MansoryItemProps {
   item: {
     title: string;
@@ -13,13 +12,21 @@ interface MansoryItemProps {
 }
 
 const MansoryItem: React.FC<MansoryItemProps> = ({ item }) => {
-  // Функція для випадкової висоти
-  const randomHeight = () => {
-    const heights = ['350px', '355px', '360px'];
-    return heights[Math.floor(Math.random() * heights.length)];
-  };
+  
+  const [isActive, setIsActive] = useState(false);
 
-  const [height] = useState(randomHeight());
+  const isMobile = () => window.innerWidth <= 768;
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (isMobile()) {
+      if (!isActive) {
+        e.preventDefault();
+        setIsActive(true);  
+      }
+      
+    }
+    
+  };
 
   return (
     <a
@@ -28,8 +35,9 @@ const MansoryItem: React.FC<MansoryItemProps> = ({ item }) => {
       rel="noopener noreferrer"
       title={item.title}
       aria-label={`${item.title} ${item.description}`}
+      onClick={handleClick}
     >
-      <MansoryItemStyle style={{ height }}>
+      <MansoryItemStyle>
         <img src={item.imageUrl} alt={item.title} />
         <div className="content__slate">
           <h3>{item.title}</h3>
@@ -58,12 +66,13 @@ const MansoryItemStyle = styled.div`
   flex-direction: column;
   align-items: center;
   box-shadow: ${({ theme }) =>
-  theme.mode === 'light'
-    ? '0 4px 12px 4px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.15), 0 -4px 8px rgba(0, 0, 0, 0.1)'
-    : '0 4px 12px 4px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.08), 0 -4px 8px rgba(255, 255, 255, 0.05)'}; 
+    theme.mode === 'light'
+      ? '0 4px 12px 4px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.15), 0 -4px 8px rgba(0, 0, 0, 0.1)'
+      : '0 4px 12px 4px rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.08), 0 -4px 8px rgba(255, 255, 255, 0.05)'};
 
   transition: transform 0.3s ease;
-  max-width: 350px;
+  height: 390px;
+  max-width: 376px;
 
   img {
     width: 100%;
@@ -73,16 +82,6 @@ const MansoryItemStyle = styled.div`
     left: 0;
     object-fit: cover;
     z-index: 1;
-    
-  }
-
-  .overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 2;
   }
 
   .content__slate {
@@ -102,8 +101,8 @@ const MansoryItemStyle = styled.div`
 
     h3 {
       font-size: 1.5rem;
-      margin: 0; 
-      line-height: 1.2; 
+      margin: 0;
+      line-height: 1.2;
       color: #fff;
       text-align: center;
     }
@@ -113,12 +112,12 @@ const MansoryItemStyle = styled.div`
       color: #e0e0e0;
       padding-left: 15px;
       padding-right: 10px;
-      margin-top: 5px; 
-      margin-bottom: 5px; 
+      margin-top: 5px;
+      margin-bottom: 5px;
     }
 
     .tags {
-      margin-top: 5px; 
+      margin-top: 5px;
       display: flex;
       gap: 0.5rem;
       justify-content: flex-start;
@@ -138,17 +137,18 @@ const MansoryItemStyle = styled.div`
   &:hover {
     transform: scale(1.05);
 
-    .overlay {
+    .content__slate {
       opacity: 1;
+      transform: translateY(0);
     }
+  }
 
+  &.active {
     .content__slate {
       opacity: 1;
       transform: translateY(0);
     }
   }
 `;
-
-
 
 export default MansoryItem;

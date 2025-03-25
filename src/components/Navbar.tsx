@@ -61,7 +61,7 @@ const NavContainer = styled.header`
   .nav-item {
     text-decoration: none;
     color: var(--text-color);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
     transition: color 0.3s ease;
 

@@ -6,28 +6,55 @@
   font-weight: 400;
 
   --primary-color: #646cff;
-  --text-color: #213547; /* Світла тема (темний текст) */
-  --bg-color: #f9f9f9; /* Світлий фон */
-  --grid-color: rgba(150, 150, 150, 0.3); /* Колір сітки */
-  --overlay-opacity: 0.12; /* Прозорість кольорових тіней */
+  --text-color: #213547;
+  --bg-color: #f9f9f9;
+  --grid-color: rgba(150, 150, 150, 0.3);
+  --overlay-opacity: 0.12;
   --icon-color: #213547;
 }
 
-/* Додаємо темну тему */
+/* 🌙 Темна тема */
 [data-theme='dark'] {
-  --text-color: #ffffff; /* Білий текст у темній темі */
-  --bg-color: #020a13; /* Темний фон */
-  --grid-color: rgba(255, 255, 255, 0.1); /* Менш помітна сітка */
-  --overlay-opacity: 0.08; /* Трохи менша прозорість */
+  --text-color: #ffffff;
+  --bg-color: #020a13;
+  --grid-color: rgba(255, 255, 255, 0.1);
+  --overlay-opacity: 0.08;
   --icon-color: #ffffff;
 }
 
+/* 🌐 Глобальні стилі */
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  color: var(--text-color); /* Використовуємо змінну для кольору тексту */
+  color: var(--text-color);
   background-color: var(--bg-color);
+  overflow-x: hidden;
+}
+
+/* ✅ Кастомний скролбар — лише для темної теми */
+[data-theme='dark']::-webkit-scrollbar {
+  height: 12px;
+  width: 12px;
+}
+
+[data-theme='dark']::-webkit-scrollbar-track {
+  background: #232E33;
+  border-radius: 16px;
+}
+
+[data-theme='dark']::-webkit-scrollbar-thumb {
+  background: #9cb3a8;
+  border-radius: 16px;
+  border: 1px solid #232e33;
+}
+
+/* Firefox підтримка */
+@media (prefers-color-scheme: dark) {
+  [data-theme='dark'] {
+    scrollbar-color: #9cb3a8 #232E33;
+    scrollbar-width: auto;
+  }
 }
 
 a {
@@ -39,4 +66,3 @@ a {
 a:hover {
   color: #535bf2;
 }
-

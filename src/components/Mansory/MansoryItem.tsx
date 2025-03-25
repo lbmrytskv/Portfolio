@@ -56,7 +56,7 @@ const MansoryItem: React.FC<MansoryItemProps> = ({ item }) => {
 };
 
 const MansoryItemStyle = styled.div`
-  margin: 1rem 0;
+  margin: 1rem 0.2rem;
   position: relative;
   cursor: pointer;
   border-radius: 10px;
@@ -72,6 +72,7 @@ const MansoryItemStyle = styled.div`
 
   transition: transform 0.3s ease;
   height: 390px;
+  width: 100%;
   max-width: 376px;
 
   img {
@@ -130,6 +131,8 @@ const MansoryItemStyle = styled.div`
         font-size: 0.85rem;
         text-transform: capitalize;
         color: white;
+        max-width: 100%;
+        word-break: break-word;
       }
     }
   }

@@ -10,12 +10,14 @@ const Layout = styled.div`
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
+  width: 100%;
+  max-width: 100%;
   overflow-x: auto;
   padding-bottom: 1rem;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
 
-  
+
   ${({ theme }) =>
     theme.mode === 'dark' &&
     `
@@ -57,7 +59,7 @@ const Layout = styled.div`
 
   @media (max-width: 1240px) {
     display: grid;
-    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
     max-width: 800px;
     gap: 1em;
     overflow: visible;
@@ -65,17 +67,18 @@ const Layout = styled.div`
 
   @media (max-width: 1024px) {
     display: grid;
-    grid-template-columns: repeat(2, minmax(280px, 1fr));
-    max-width: 700px;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    max-width: 800px;
     gap: 1em;
     overflow: visible;
   }
 
   @media (max-width: 768px) {
     display: grid;
-    grid-template-columns: repeat(1, minmax(280px, 1fr));
+    grid-template-columns: repeat(1, minmax(250px, 1fr));
     justify-items: center;
     max-width: 100%;
+    overflow: visible; /* 🔧 важливо — прибирає горизонтальний скрол */
   }
 
   animation: fadeInUp 1s ease;
@@ -91,6 +94,5 @@ const Layout = styled.div`
     }
   }
 `;
-
 
 export default MansoryLayout;

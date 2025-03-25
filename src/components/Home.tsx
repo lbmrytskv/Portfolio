@@ -24,14 +24,17 @@ const Home: React.FC = () => {
           <StyledNavLink to="/contact">Contact Me</StyledNavLink> for collaborations.
         </motion.p>
       </TextContainer>
-      <ImageContainer>
-        <motion.img
-          src="/images/Home2-cropped-cropped.svg"
-          alt="Portfolio Illustration"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1, transition: { duration: 0.5, ease: 'easeOut' } }}
-        />
-      </ImageContainer>
+      <ImageContainer
+  as={motion.div}
+  initial="initial"
+  animate="animate"
+  variants={fadeInUp}
+>
+  <motion.img
+    src="/images/Home2-cropped-cropped.svg"
+    alt="Portfolio Illustration"
+  />
+</ImageContainer>
     </FlexContainer>
   );
 };

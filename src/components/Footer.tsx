@@ -68,10 +68,7 @@ const SocialMedia = styled.div`
     }
   }
 
-  svg {
-    fill: var(--icon-color);
-    transition: fill 0.3s ease;
-  }
+  
 `;
 
 export default Footer;

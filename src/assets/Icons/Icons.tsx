@@ -156,3 +156,16 @@ export const Projects = () => (
     <path d="M460-420h200v-80H460v80Zm-60 60v-200h320v200H400ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H160v400Z" />
   </svg>
 );
+
+export const Education = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 -960 960 960"
+    width="20"
+    height="20"
+    fill="currentColor"
+    style={{ marginLeft: '4px', verticalAlign: 'middle' }}
+  >
+    <path d="M480-510 165-640q-11-5-18-16t-7-24q0-13 7-24t18-16l315-130 315 130q11 5 18 16t7 24q0 13-7 24t-18 16L480-510Zm0-75 261-105-261-105-261 105 261 105Zm0 475q-101-31-168-118.5T245-434v-148l235 97 235-97v148q0 96-67 183.5T480-110Z" />
+  </svg>
+);

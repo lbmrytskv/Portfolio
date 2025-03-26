@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
-import { Github, Projects, Interests } from '../assets/Icons/Icons';
+import { Github, Projects, Interests, Education } from '../assets/Icons/Icons';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -60,6 +60,15 @@ const About: React.FC = () => {
                 I enjoy shaping ideas into actual products. With design, coding, and logic combined, I help take concepts from zero to one.
               </p>
             </li>
+            <li>
+              <div>
+                  Education <Education />
+              </div>
+              
+              <p>
+                Masters degree in Agh University
+              </p>
+            </li>
 
             <li>
               <div>
@@ -83,7 +92,7 @@ const PageSection = styled.div`
   margin: 0 auto;
 
   .content-wrapper {
-    max-width: 800px;
+    max-width: 8c00px;
     margin: 0 auto;
     padding: 0 1rem;
     text-align: center;

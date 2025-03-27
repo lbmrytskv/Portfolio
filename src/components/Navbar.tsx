@@ -5,7 +5,7 @@ import { Logo, Moon } from '../assets/Icons/Icons';
 import { ThemeContext } from './Layout';
 
 const Navbar: React.FC = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { toggleTheme } = useContext(ThemeContext);
 
   return (
     <NavContainer>
@@ -16,10 +16,18 @@ const Navbar: React.FC = () => {
       </div>
 
       <nav className="nav-links">
-        <NavLink to="/" className="nav-item" activeClassName="active">Home</NavLink>
-        <NavLink to="/about" className="nav-item" activeClassName="active">About</NavLink>
-        <NavLink to="/projects" className="nav-item" activeClassName="active">Projects</NavLink>
-        <NavLink to="/contact" className="nav-item" activeClassName="active">Contact</NavLink>
+        <NavLink to="/" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`}>
+          Home
+        </NavLink>
+        <NavLink to="/about" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`}>
+          About
+        </NavLink>
+        <NavLink to="/projects" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`}>
+          Projects
+        </NavLink>
+        <NavLink to="/contact" className={({ isActive }) => `nav-item${isActive ? ' active' : ''}`}>
+          Contact
+        </NavLink>
       </nav>
 
       <button className="theme-toggle" aria-label="Toggle Dark Mode" onClick={toggleTheme}>
@@ -28,6 +36,9 @@ const Navbar: React.FC = () => {
     </NavContainer>
   );
 };
+
+
+/* ----------------- STYLES ----------------- */
 
 const NavContainer = styled.header`
   display: flex;

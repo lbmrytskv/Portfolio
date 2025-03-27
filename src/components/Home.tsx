@@ -19,9 +19,9 @@ const Home: React.FC = () => {
       >
         <motion.h1 className="intro__text">Welcome to My Portfolio</motion.h1>
         <motion.p>
-          I am a Frontend Developer passionate about building user-friendly and modern web applications.
-          Explore my <StyledNavLink to="/projects">Projects</StyledNavLink> or{' '}
-          <StyledNavLink to="/contact">Contact Me</StyledNavLink> for collaborations.
+          Hello, I'm <StyledNavLink to="/about">Liubomyr Yatskiv</StyledNavLink>, a Frontend Developer who loves building modern, responsive, and user-friendly web applications.
+          On this website you can explore my <StyledNavLink to="/projects">Projects</StyledNavLink>, get to know a little more <StyledNavLink to="/about">About me</StyledNavLink>  or 
+          <StyledNavLink to="/contact"> Contact Me</StyledNavLink> for collaborations. Would be happy to connect!
         </motion.p>
       </TextContainer>
       <ImageContainer
@@ -38,6 +38,8 @@ const Home: React.FC = () => {
     </FlexContainer>
   );
 };
+
+/* ---------------------------- Styles ---------------------------- */
 
 const FlexContainer = styled.div`
   position: absolute;

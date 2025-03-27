@@ -10,7 +10,11 @@ export const ThemeContext = createContext({
 });
 
 const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    return savedTheme || 'dark';
+  });
+  
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
@@ -49,6 +53,8 @@ const Layout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
 };
 
 export default Layout;
+
+
 
 /* ----------------- STYLES ----------------- */
 const PageContainer = styled.div`

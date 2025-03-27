@@ -18,7 +18,7 @@ const About: React.FC = () => {
       variants={fadeInUp}
     >
       <div className="content-wrapper">
-        <h1 className="intro__text">About Me.</h1>
+        <h1 className="intro__text">About Me</h1>
         <article>
           <ul className="timeline">
             <li className="mt-2">
@@ -41,7 +41,12 @@ const About: React.FC = () => {
                 </a>
               </div>
               <p>
-                Passionate about building clean, responsive websites. Experienced with frontend and backend technologies, and love solving real-world problems through code.
+                I work with JavaScript(ES6+), 
+                HTML5, CSS3, React, React Router and Redux Toolkit. Lately I have finished an internship in EPAM systems with Angular and Typescript. 
+                Also I have an experience with backend API integrating, using Nest.js.  I handled user authentication, protected routes, and data fetching
+                using secure HTTP requests (including Bearer tokens). As a developer, who enjoys building seamless and visually appealing web experiences,
+                I like to work with Figma and Canva to create designs and prototypes. 
+
               </p>
             </li>
 
@@ -57,7 +62,7 @@ const About: React.FC = () => {
                 </NavLink>
               </div>
               <p>
-                I enjoy shaping ideas into actual products. With design, coding, and logic combined, I help take concepts from zero to one.
+                Here you can take a look at some of my projects, which are deployed on Netlify and Render. Right now I work on a new project, so check out for an updates!
               </p>
             </li>
             <li>
@@ -66,7 +71,8 @@ const About: React.FC = () => {
               </div>
               
               <p>
-                Masters degree in Agh University
+                I graduated from Cracow AGH University, where I've got my master's degree with "good" grade in Drililng of oil and gas wells and Geoengineering.This gave me a soild
+                background in engineering and problem solving, which I apply to my work as a developer.
               </p>
             </li>
 
@@ -76,7 +82,8 @@ const About: React.FC = () => {
               </div>
               
               <p>
-                I’m not a traditional designer, but I enjoy refining styles and crafting intuitive interfaces that feel natural to use.
+                I am very active and passionate person. I like to travel and expore new places, I have visited about 30 countries and during last year I've organised more than 10 group trips as a guide. 
+                You can check more at my <a href="https://www.instagram.com/koordyna.ty/" target="_blank" rel="noopener noreferrer">Instagram</a>. I also keen on Web3 and blockchain technologies.
               </p>
             </li>
           </ul>
@@ -86,13 +93,16 @@ const About: React.FC = () => {
   );
 };
 
+
+/* ---------------------------- Styles ---------------------------- */
+
 const PageSection = styled.div`
   padding: 2rem 1rem;
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin:-10px auto 0 auto;
 
   .content-wrapper {
-    max-width: 8c00px;
+    max-width: 850px;
     margin: 0 auto;
     padding: 0 1rem;
     text-align: center;

@@ -46,17 +46,17 @@ const Footer: React.FC<IFooterProps> = ({ children, goto }) => {
 /* ---------------------------- Styles ---------------------------- */
 const FooterContainer = styled.footer`
   text-align: center;
-   /* ✅ Зменшена висота футера */
+  
   background: var(--bg);
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* ✅ Додано тінь зверху */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); 
 `;
 
 const SocialMedia = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
-  gap: 1rem;
+  margin:0.9rem;
+  gap: 5rem;
 
   a {
     color: var(--text-color);

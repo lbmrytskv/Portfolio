@@ -73,6 +73,8 @@ const Contact: React.FC = () => {
   );
 };
 
+/* ---------------------------- Styles ---------------------------- */
+
 const ContactSection = styled.div`
   .intro__text {
     font-size: 2rem;

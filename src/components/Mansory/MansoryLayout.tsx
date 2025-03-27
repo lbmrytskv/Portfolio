@@ -5,6 +5,8 @@ const MansoryLayout: React.FC<PropsWithChildren<{}>> = ({ children }) => {
   return <Layout>{children}</Layout>;
 };
 
+/* ---------------------------- Styles ---------------------------- */
+
 const Layout = styled.div`
   margin: 1rem auto;
   display: flex;
@@ -78,7 +80,7 @@ const Layout = styled.div`
     grid-template-columns: repeat(1, minmax(250px, 1fr));
     justify-items: center;
     max-width: 100%;
-    overflow: visible; /* 🔧 важливо — прибирає горизонтальний скрол */
+    overflow: visible; 
   }
 
   animation: fadeInUp 1s ease;

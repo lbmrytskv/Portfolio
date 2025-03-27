@@ -55,6 +55,9 @@ const MansoryItem: React.FC<MansoryItemProps> = ({ item }) => {
   );
 };
 
+
+/* ---------------------------- Styles ---------------------------- */
+
 const MansoryItemStyle = styled.div`
   margin: 1rem 0.2rem;
   position: relative;

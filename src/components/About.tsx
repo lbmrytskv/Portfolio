@@ -45,7 +45,7 @@ const About: React.FC = () => {
                 HTML5, CSS3, React, React Router and Redux Toolkit. Lately I have finished an internship in EPAM systems with Angular and Typescript. 
                 Also I have an experience with backend API integrating, using Nest.js.  I handled user authentication, protected routes, and data fetching
                 using secure HTTP requests (including Bearer tokens). As a developer, who enjoys building seamless and visually appealing web experiences,
-                I like to work with Figma and Canva to create designs and prototypes. 
+                I like to work with Figma and Canva to create designs and prototypes. Also I am familiar with writing unit tests for React components using Vitest and React Testing Library.
 
               </p>
             </li>

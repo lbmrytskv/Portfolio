@@ -12,7 +12,7 @@ export const projectsData = [
       id: 2,
       title: "Meme generator",
       description: "An app where you can get creative and create your own meme!",
-      imageUrl: "public/images/memegenerator.gif",
+      imageUrl: "/images/memegenerator.gif",
       link: "https://memegenerator-lbmrytskv.netlify.app/",
       technologies: ["React", "JavaScript", "CSS"],
       type: ["project"],

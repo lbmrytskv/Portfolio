@@ -31,7 +31,7 @@ const Home: React.FC = () => {
   variants={fadeInUp}
 >
   <motion.img
-    src="/images/Home2-cropped-cropped.svg"
+    src="/images/Home2-cropped-optimized.svg"
     alt="Portfolio Illustration"
   />
 </ImageContainer>

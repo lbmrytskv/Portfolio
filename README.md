@@ -1,50 +1,48 @@
-# React + TypeScript + Vite
+# 💼 Liubomyr Yatskiv Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal developer portfolio website built with **React**, **TypeScript**, and **Vite**.  
+This project showcases my skills, projects, and background as a frontend developer.
 
-Currently, two official plugins are available:
+🔗 **Live Site**:
+https://liubomyryatskiv.netlify.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**
+- **TypeScript**
+- **Vite**
+- **Styled Components**
+- **Framer Motion**
+- **React Router**
+- **Custom SVG Icons**
+- **Responsive Design**
+- **Netlify Deployment**
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## ✨ Features
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Smooth page transitions and animations
+- Dark / Light theme toggle with local storage support
+- Custom SVG icons and watermark
+- Responsive layout with masonry grid for projects
+- Animated contact form and timeline-style About section
+- Scrollable project previews with modern UI
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+---
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 📦 Getting Started
+
+To run this project locally:
+
+```bash
+git clone https://github.com/lbmrytskv/Portfolio.git
+cd Portfolio
+npm install
+npm run dev
+You’ll need Node.js and npm installed.
+
+
+

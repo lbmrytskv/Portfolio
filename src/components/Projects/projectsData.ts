@@ -1,6 +1,18 @@
 export const projectsData = [
+
   {
     id: 1,
+    title: "Svit4you",
+    description:
+      "E-commerce platform for a beauty and cosmetics store. It allows users to browse products, add them to the cart, and place orders. ",
+    imageUrl: "/images/svit4you.gif",
+    link: "https://courses-cards.onrender.com/",
+    technologies: ["React", "TypeScript", "Next", "TailiwndCSS"],
+    type: ["tools"],
+  },
+
+  {
+    id: 2,
     title: "Courses App",
     description:
       "Web application for managing courses. It allows users to view, create and manage their own courses list. To manage courses log in as admin. Login: admin@email.com, Password: admin123. It might take a minute before authorization will start to work, as project is deployed on a free server",
@@ -10,7 +22,7 @@ export const projectsData = [
     type: ["tools"],
   },
   {
-    id: 2,
+    id: 3,
     title: "Meme generator",
     description: "An app where you can get creative and create your own meme!",
     imageUrl: "/images/memegenerator.gif",
@@ -19,7 +31,7 @@ export const projectsData = [
     type: ["project"],
   },
   {
-    id: 3,
+    id: 4,
     title: "Orderbook",
     description: "An Angular web application that allows you to visually explore and interact with order book snapshots from a trading system. The project provides an intuitive way to analyze market depth, watch bid/ask levels change over time, and replay historical snapshots like a time-lapse.",
     imageUrl: "/images/Orderbook.gif",
@@ -28,7 +40,7 @@ export const projectsData = [
     type: ["tools"],
   },
   {
-    id: 4,
+    id: 5,
     title: "Tenzies game",
     description:
       "Classic dice game with React, where you have to roll until all dices are the same. Made with usage of useState hook to manage dices and their values and useEffect to congratulate you on a winning.",
@@ -38,7 +50,7 @@ export const projectsData = [
     type: ["project"],
   },
   {
-    id: 5,
+    id: 6,
     title: "Piano Player",
     description: "Become a musician and play happy birthday song on a virtual piano!",
     imageUrl: "/images/pianoplayer.gif",
@@ -46,4 +58,5 @@ export const projectsData = [
     technologies: ["Javascript", "CSS", "HTML"],
     type: ["tools"],
   },
+
 ];

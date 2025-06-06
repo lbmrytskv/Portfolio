@@ -6,7 +6,7 @@ export const projectsData = [
     description:
       "E-commerce platform for a beauty and cosmetics store. It allows users to browse products, add them to the cart, and place orders. ",
     imageUrl: "/images/svit4you.gif",
-    link: "https://courses-cards.onrender.com/",
+    link: "https://svit4you.com/",
     technologies: ["React", "TypeScript", "Next", "TailiwndCSS"],
     type: ["tools"],
   },
